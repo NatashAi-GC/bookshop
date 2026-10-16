@@ -27,6 +27,6 @@ Content-Type: application/json
 Authorization: Basic bob:
 
 {
-  "book": 201,
+  "book": 202,
   "quantity": 3
 }
