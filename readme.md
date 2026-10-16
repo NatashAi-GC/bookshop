@@ -2,6 +2,10 @@
 
 This is our primer sample for [Getting Started in a Nutshell](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
 
+## Documentation
+
+See the [layered bookshop documentation](docs/README.md) for an overview of the database, service and UI layers.
+
 
 ## Get it
 
