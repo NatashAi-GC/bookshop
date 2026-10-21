@@ -15,6 +15,11 @@ class CatalogService extends cds.ApplicationService { init() {
 
     // Try to reduce the stock of the ordered book, the good case
     let { book:id, quantity=1 } = req.data
+
+    // Guard against non-positive quantities, which would otherwise
+    // increase the stock and allow ordering "negative" amounts
+    if (quantity < 1) return req.error (400, `Quantity must be at least 1, got ${quantity}`, { quantity })
+
     let { affected } = await UPDATE (Books,id)
       .with `stock = stock - ${quantity}`
       .where `stock >= ${quantity}`
